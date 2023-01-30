@@ -1,4 +1,4 @@
-# chrome-eazy-bookmark
+# 简单书签
 
 谷歌浏览器扩展，允许您轻松查询书签
 
