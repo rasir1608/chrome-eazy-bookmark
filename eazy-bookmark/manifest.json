@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "简单书签",
+  "version": "1.0.0",
+  "description": "让书签访问更简单",
+  "icons": {
+    "16": "img/logo.png",
+    "48": "img/logo.png",
+    "128": "img/logo.png"
+  },
+  "action": {
+    "default_icon": "img/logo.png",
+    "default_title": "简单书签(Eazy-bookmark)",
+    "default_popup": "/html/popup.html"
+  },
+  "background": {
+    "service_worker": "/js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/js/index.js"],
+      "run_at": "document_idle",
+      "css": ["/css/drawer.css"]
+    }
+  ],
+  "permissions": ["bookmarks", "storage", "favicon"],
+  "web_accessible_resources": [
+    {
+      "resources": ["_favicon/*"],
+      "matches": ["<all_urls>"],
+      "extension_ids": ["*"]
+    }
+  ]
+}
