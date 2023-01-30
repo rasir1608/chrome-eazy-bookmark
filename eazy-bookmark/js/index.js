@@ -105,7 +105,7 @@
       list.forEach((item) => {
         const { parentId, title, index, dateAdded, children, id, url } = item;
         const key = `${parentKey}-${id}`;
-        const isLeaf = !Array.isArray(children) || children.length === 0;
+        const isLeaf = !Array.isArray(children);
         const itemDom = document.createElement("li");
         itemDom.classList.add(TAG_NAMES.LIST_ITEM_CLASS);
         itemDom.style.paddingLeft = `${depth * paddingLeft}px`;
